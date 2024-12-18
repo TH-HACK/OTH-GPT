@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ddd;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 30px;
+    margin-top: 25px;
+}
+
+.menu-button {
+    position: absolute;
+    top: 25.9px;
+    left: 5px;
+    background: linear-gradient(45deg, rgba(255, 105, 199, 0.5), rgba(255, 153, 102, 10)); 
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, rgba(255, 105, 199, 0.5), rgba(255, 153, 102, 30)); 
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 3;
+}
+
+.sidebar button {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 200px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.sidebar button:hover {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+}
+
+.sidebar button i {
+    margin-left: 10px;
+    font-size: 1.5em;
+}
+
+.chat-window {
+    flex: 1;
+    background: #121212;
+    margin: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message, .bot-message {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    background: linear-gradient(45deg, #0078d4, #005f99);
+    color: white;
+    margin-left: auto;
+    text-align: right;
+    box-shadow: 0 0 10px rgba(0, 120, 212, 0.5);
+}
+
+.bot-message {
+    background: linear-gradient(45deg, #444, #333);
+    color: #ddd;
+    margin-right: auto;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(70, 70, 70, 0.5);
+}
+
+.input-area {
+    display: flex;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    outline: none;
+    background-color: #222;
+    color: #ddd;
+    border-image: linear-gradient(45deg, #ff6ec7, #ff9966) 1;
+}
+
+.input-area button {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-area button:hover {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+}
+
+.typing-indicator {
+    font-size: 1.5em;
+    color: #ff6ec7;
+}
+
+.popup-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 4;
+}
+
+.popup {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #ff6ec7;
+    width: 80%;
+    max-width: 400px;
+}
+
+.popup button {
+    background: linear-gradient(45deg, #ff6ec7, #ff9966);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.popup button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
